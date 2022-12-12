@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Competitions extends Model
+class Competition extends Model
 {
     use HasFactory;
 
@@ -25,4 +25,12 @@ class Competitions extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    public function participant(){
+        return $this->belongsTo(Participant::class,'participant_id');
+    }
+
+    public function competition_level(){
+        return $this->belongsTo(CompetitionLevel::class,'competition_level_id');
+    }
 }

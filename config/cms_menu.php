@@ -5,7 +5,7 @@ return [
 // icon can use themify icon or fontawesome
         [
             'title'=>'Daftar Kompetisi',
-            'url'=>'',
+            'url'=>'/cms/competition',
             'icon'=>'fa-solid fa-list',
             'permission'=>'',
             'childern'=>[]

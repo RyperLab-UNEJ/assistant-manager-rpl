@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\CmsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CmsController;
+use App\Http\Controllers\CompetitionController;
+use App\Http\Livewire\Cms\Competition\CreateCompetition;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +22,11 @@ Route::get('/', function () {
 
 Route::prefix('cms')->name('cms.')->group(function () {
     Route::get('/index',[CmsController::class,'index'])->name('index');
-    // Route::resource('user', UserController::class);
+
+    Route::prefix('competition')->name('competition.')->group(function(){
+        Route::get('/',[CompetitionController::class,'index'])->name('index');
+            Route::get('/create',CreateCompetition::class)->name('create');
+        }
+    );
+    // Route::resource('competition', CompetitionController::class);
 });

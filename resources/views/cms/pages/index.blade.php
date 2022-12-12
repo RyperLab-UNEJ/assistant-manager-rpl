@@ -3,7 +3,7 @@
 @section('title','Index')
 
 @section('main-content')
-    ini konten pada index
+    <livewire:competition-table />
 @endsection
 
 
