@@ -1,5 +1,9 @@
+@section('after-script')
+<script>
+    setCurrent('cms/competition')
+</script>
+@endsection
 <div class="card">
-    {{-- If your happiness depends on money, you will never be happy with yourself. --}}
         <div class="card-body">
             <h4 class="card-title">Tambah Kompetisi Baru</h4>
             <form class="forms-sample">

@@ -92,8 +92,9 @@
     <script src="{{ asset('cms/js/dashboard.js') }}"></script>
     <script src="{{ asset('cms/js/Chart.roundedBarCharts.js') }}"></script>
     <!-- End custom js for this page-->
-    @livewireScripts
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
     @yield('after-script')
+    @livewireScripts
 </body>
 
 </html>

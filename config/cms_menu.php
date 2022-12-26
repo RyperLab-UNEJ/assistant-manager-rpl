@@ -4,6 +4,13 @@ return [
     'cms' =>[
 // icon can use themify icon or fontawesome
         [
+            'title'=>'Dashboard',
+            'url'=>'/cms/index',
+            'icon'=>'icon-grid menu-icon',
+            'permission'=>'',
+            'childern'=>[]
+        ],
+        [
             'title'=>'Daftar Kompetisi',
             'url'=>'/cms/competition',
             'icon'=>'fa-solid fa-list',

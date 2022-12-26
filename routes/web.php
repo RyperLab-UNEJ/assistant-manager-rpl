@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::permanentRedirect('cms/', 'cms/index');
 Route::prefix('cms')->name('cms.')->group(function () {
     Route::get('/index',[CmsController::class,'index'])->name('index');
 

@@ -3,7 +3,8 @@
 @section('title','Index')
 
 @section('main-content')
-    <livewire:competition-table />
+    {{-- <livewire:competition-table /> --}}
+    Ini halaman dashboard
 @endsection
 
 
