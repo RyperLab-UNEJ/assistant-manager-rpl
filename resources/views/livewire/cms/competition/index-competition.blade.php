@@ -1,4 +1,4 @@
-@extends('cms.partials.cms_layout')
+@extends('layouts.cms_layout')
 
 @section('title','Competition')
 
@@ -8,7 +8,8 @@
 
 @section('main-content')
     <a type="button" href="{{ route('cms.competition.create') }}" class="btn btn-outline-info btn-icon-text mb-3"><i class="fa-solid fa-plus mr-2"></i>Tambah Kompetisi Baru</a>
-    <livewire:competition-table />
+    {{-- <livewire:competition-table /> --}}
+    <livewire:cms.competition.competition-index />
 @endsection
 
 @section('after-script')

@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Skydash Admin - @yield('title')</title>
+    @vite('resources/css/app.css')
+
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('cms/vendors/feather/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('cms/vendors/ti-icons/css/themify-icons.css') }}">
@@ -21,8 +23,17 @@
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('cms/images/favicon.png') }}" />
 
+    {{-- Tailwind --}}
+    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+
     {{-- fontawsome --}}
     <script src="https://kit.fontawesome.com/d79b975262.js" crossorigin="anonymous"></script>
+
+    <style>
+        .nav-item .collapse{
+            visibility: visible;
+        }
+    </style>
 
     @livewireStyles
     {{-- Alpine JS --}}
@@ -32,7 +43,7 @@
     <style>
         [x-cloak] { display: none !important; }
     </style>
-    <div class="container-scroller"> 
+    <div class="container-scroller">
         {{-- SECTION FOR NAVBAR --}}
         @include('cms.partials.navbar')
         <div class="container-fluid page-body-wrapper">
@@ -56,7 +67,7 @@
                     <!-- partial -->
                 </div>
                 <!-- main-panel ends -->
-        </div>   
+        </div>
             <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
