@@ -17,7 +17,7 @@ use App\Http\Livewire\Cms\Competition\CreateCompetition;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('cms.pages.index');
 });
 
 // Route::permanentRedirect('cms/', 'cms/index');
