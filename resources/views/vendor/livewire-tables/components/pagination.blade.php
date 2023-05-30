@@ -15,7 +15,7 @@
             <div class="mt-4 px-4 md:p-0 sm:flex justify-between items-center space-y-4 sm:space-y-0">
                 <div>
                     @if ($component->paginationIsEnabled() && $rows->lastPage() > 1)
-                        <p class="paged-pagination-results text-sm text-gray-700 leading-5 dark:text-white">
+                        <p class="paged-pagination-results text-sm text-gray-700 leading-5">
                             <span>@lang('Showing')</span>
                             <span class="font-medium">{{ $rows->firstItem() }}</span>
                             <span>@lang('to')</span>
@@ -25,7 +25,7 @@
                             <span>@lang('results')</span>
                         </p>
                     @else
-                        <p class="total-pagination-results text-sm text-gray-700 leading-5 dark:text-white">
+                        <p class="total-pagination-results text-sm text-gray-700 leading-5">
                             @lang('Showing')
                             <span class="font-medium">{{ $rows->count() }}</span>
                             @lang('results')
