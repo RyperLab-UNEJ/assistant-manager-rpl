@@ -68,7 +68,11 @@ class FormAdmin extends Component
 
        $this->admin->email = $this->email;
        $this->admin->save();
-       $this->admin->assignRole($this->role);
+       if ($this->operation === 'create') {
+            $this->admin->assignRole($this->role);
+       }else{
+        $this->admin->syncRoles($this->role);
+       }
 
 
        session()->flash('success', 'New competition successfully created.');

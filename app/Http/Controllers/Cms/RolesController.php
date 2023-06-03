@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Cms;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use App\Http\Controllers\Controller;
+use App\Http\Livewire\Cms\Role\CreateRole;
 
 class RolesController extends Controller
 {
@@ -24,7 +26,7 @@ class RolesController extends Controller
      */
     public function create()
     {
-        //
+        return App::call(CreateRole::class);
     }
 
     /**

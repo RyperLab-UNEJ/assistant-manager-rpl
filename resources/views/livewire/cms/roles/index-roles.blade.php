@@ -7,7 +7,7 @@
 @endsection
 
 @section('main-content')
-    <a type="button" href="{{ route('cms.admin.create') }}" class="btn btn-md btn-info btn-icon-text mb-3"><i class="fa-solid fa-plus mr-2"></i>Tambah Data</a>
+    <a type="button" href="{{ route('cms.roles.create') }}" class="btn btn-md btn-info btn-icon-text mb-3"><i class="fa-solid fa-plus mr-2"></i>Tambah Data</a>
 
     <livewire:cms.role.role-index />
 @endsection
