@@ -12,6 +12,7 @@ class checkbox extends Component
     public $value;
     public $labelClass;
     public $inputClass;
+    public $formClass;
     public $wireModel;
     public $addAttributes;
     /**
@@ -19,14 +20,15 @@ class checkbox extends Component
      *
      * @return void
      */
-    public function __construct(  
+    public function __construct(
     $title,
     $wireModel, // comment this line if you not use livewire
-    $id='',    
+    $id='',
     $name='',
     $value=true,
     $labelClass='',
     $inputClass='',
+    $formClass='',
     $addAttributes='',)
     {
         $this->id = $id;
@@ -37,9 +39,10 @@ class checkbox extends Component
         $this->inputClass = $inputClass;
         $this->addAttributes = $addAttributes;
         $this->wireModel = $wireModel;
+        $this->$formClass = $formClass;
     }
 
-    
+
 
     /**
      * Get the view / contents that represent the component.

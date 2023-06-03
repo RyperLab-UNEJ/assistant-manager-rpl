@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\User;
+use App\Models\Admin;
+
 return [
 
     /*
@@ -14,8 +17,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        'guard' => 'cms',
+        'passwords' => 'admins',
     ],
 
     /*
@@ -36,6 +39,10 @@ return [
     */
 
     'guards' => [
+        'cms' => [
+            'driver'   => 'session',
+            'provider' => 'admins',
+        ],
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -60,9 +67,13 @@ return [
     */
 
     'providers' => [
+        'admins' => [
+            'driver' => 'eloquent',
+            'model'  => Admin::class,
+        ],
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => User::class,
         ],
 
         // 'users' => [
@@ -89,6 +100,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'admins' => [
+            'provider' => 'admins',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
