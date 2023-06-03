@@ -27,24 +27,12 @@ use App\Http\Livewire\Cms\Competition\CreateCompetition;
 Route::get('/', function () {
     return view('cms.pages.login');
 });
-Route::get('/clear', function () {
-    Session::getHandler()->gc(0);
-    return view('cms.pages.login');
-});
-// Route::get('/dashboard',[CmsController::class,'index'])->name('dashboard');
 
-// Route::permanentRedirect('cms/', 'cms/index');
 Route::prefix('cms')->name('cms.')->middleware('auth:cms')->group(function () {
     Route::get('/dashboard',[CmsController::class,'index'])->name('index');
 
-    Route::prefix('competition')->name('competition.')->group(function(){
-        Route::get('/',[CompetitionController::class,'index'])->name('index');
-            Route::get('/create',CreateCompetition::class)->name('create');
-        }
-    );
     Route::resource('/admin',AdminController::class);
     Route::resource('/roles',RolesController::class);
-    // Route::resource('competition', CompetitionController::class);
 });
 
 require __DIR__.'/auth.php';
