@@ -5,7 +5,7 @@
 @endsection
 <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Tambah Role Baru</h4>
+            <h4 class="card-title">Edit Role {{ $role->id }}</h4>
 
             @include('components.cms.alert')
             <form class="forms-sample" wire:submit.prevent="save">

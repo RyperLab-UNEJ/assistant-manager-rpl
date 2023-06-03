@@ -26,7 +26,7 @@
                     </div>
                 @endif
                 <button type="submit" class="btn btn-primary mr-2" >Submit</button>
-                <button type="button" class="btn btn-light" wire:click='backToIndex'>Cancel</button>
+                <button type="button" class="btn btn-outline-danger" wire:click='backToIndex'>Cancel</button>
             </form>
             </div>
         </div>

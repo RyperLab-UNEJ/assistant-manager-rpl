@@ -14,7 +14,7 @@
                 <x-cms.text type="email" title="Email" wireModel='email' placeholder="Email *" addAttributes="disabled"/>
                 <x-cms.select title="Role *" wireModel='role' :options="$roles" addAttributes="disabled"/>
                 <a type="button" class="btn btn-warning mr-2" href="{{ route('cms.admin.edit',['admin'=>$admin->id]) }}">Edit</a>
-                <button type="button" class="btn btn-light" wire:click='backToIndex'>Cancel</button>
+                <button type="button" class="btn btn-outline-danger" wire:click='backToIndex'>Cancel</button>
             </form>
             </div>
         </div>

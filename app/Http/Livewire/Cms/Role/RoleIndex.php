@@ -23,7 +23,7 @@ class RoleIndex extends LivewireDatatable
             Column::name('name')->searchable()
             ->editable(),
             Column::callback(['id', 'name'], function ($id, $name) {
-                return view('components.cms.action', ['id' => $this->getRouteKeyName(), 'name' => $name]);
+                return view('components.cms.action', ['id' => $id, 'name' => $name]);
             })->unsortable()->label('action')
         ];
     }

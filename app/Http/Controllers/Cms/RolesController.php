@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\Controller;
 use App\Http\Livewire\Cms\Role\CreateRole;
+use App\Http\Livewire\Cms\Role\EditRole;
+use App\Http\Livewire\Cms\Role\ShowRole;
 
 class RolesController extends Controller
 {
@@ -48,7 +50,7 @@ class RolesController extends Controller
      */
     public function show($id)
     {
-        //
+        return App::call(ShowRole::class,['role'=>$id]);
     }
 
     /**
@@ -59,7 +61,7 @@ class RolesController extends Controller
      */
     public function edit($id)
     {
-        //
+        return App::call(EditRole::class,['role'=>$id]);
     }
 
     /**

@@ -5,13 +5,13 @@
 @endsection
 <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Tambah Role Baru</h4>
+            <h4 class="card-title">Show Role {{ $role->id }}</h4>
 
             @include('components.cms.alert')
             <form class="forms-sample" wire:submit.prevent="save">
 
-                <x-cms.text title="Name" wireModel='role.name' placeholder="Name" addAttributes="required"/>
-                <x-cms.select title="Guard" wireModel='role.guard_name' :options="$guards" addAttributes="required"/>
+                <x-cms.text title="Name" wireModel='role.name' placeholder="Name" addAttributes="disabled"/>
+                <x-cms.select title="Guard" wireModel='role.guard_name' :options="$guards" addAttributes="disabled"/>
 
                 <div class="table-responsive pt-3 mb-10">
                     <table class="table table-bordered">
@@ -45,28 +45,28 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center">
-                                        <input wire:model='permissions' value="{{ $value[6] }}" type="checkbox">
+                                        <input wire:model='permissions' value="{{ $value[6] }}" type="checkbox" disabled>
                                     </div>
                                     {{-- <x-cms.checkbox title="" value="{{ $value[6] }}" wireModel='permissions'/> --}}
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center">
-                                        <input wire:model='permissions' value="{{ $value[5] }}" type="checkbox">
+                                        <input wire:model='permissions' value="{{ $value[5] }}" type="checkbox" disabled>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center">
-                                        <input wire:model='permissions' value="{{ $value[0] }}" type="checkbox">
+                                        <input wire:model='permissions' value="{{ $value[0] }}" type="checkbox" disabled>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center">
-                                        <input wire:model='permissions' value="{{ $value[4] }}" type="checkbox">
+                                        <input wire:model='permissions' value="{{ $value[4] }}" type="checkbox" disabled>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center">
-                                        <input wire:model='permissions' value="{{ $value[1] }}" type="checkbox">
+                                        <input wire:model='permissions' value="{{ $value[1] }}" type="checkbox" disabled>
                                     </div>
                                 </td>
                             </tr>
@@ -74,7 +74,7 @@
                       </tbody>
                     </table>
                   </div>
-                <button type="submit" class="btn btn-primary mr-2" >Submit</button>
+                <button wire:click="performAction('show',{{ $role->id }})" type="button" class="btn btn-warning mr-2" >edit</button>
                 <button type="button" class="btn btn-outline-danger" wire:click='backToIndex'>Cancel</button>
             </form>
             </div>

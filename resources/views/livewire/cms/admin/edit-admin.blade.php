@@ -14,7 +14,7 @@
                 <x-cms.text type="email" title="Email" wireModel='email' placeholder="Email *" addAttributes="required"/>
                 <x-cms.select title="Role *" wireModel='role' :options="$roles" addAttributes="required"/>
                 <button type="submit" class="btn btn-primary mr-2" >Submit</button>
-                <button type="button" class="btn btn-light" wire:click='backToIndex'>Cancel</button>
+                <button type="button" class="btn btn-outline-danger" wire:click='backToIndex'>Cancel</button>
             </form>
             </div>
         </div>

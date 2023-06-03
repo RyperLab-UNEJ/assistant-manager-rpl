@@ -35,7 +35,7 @@ class FormAdmin extends Component
         // dd($this->operation );
         if ($this->operation != 'create') {
             $this->email = $this->admin->email;
-            $this->role = $this->admin->getRoleNames()[0];
+            $this->role = $this->admin->getRoleNames()[0]??'';
         }
     }
 

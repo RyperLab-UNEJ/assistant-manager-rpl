@@ -39,6 +39,10 @@ class FormRole extends Component
            }
 
         }
+
+        if ($this->operation != 'create') {
+            $this->permissions = $this->role->permissions->pluck('name');
+        }
         // dd($this->permissionOptions);
 
     }
