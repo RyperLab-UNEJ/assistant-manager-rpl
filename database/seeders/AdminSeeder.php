@@ -16,10 +16,10 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name'=> 'admin',
-            'email'=>'zaixyx332@gmail.com',
-            'password'=>Hash::make('1234asdf')
-        ]);
+        // User::create([
+        //     'name'=> 'admin',
+        //     'email'=>'zaixyz332@gmail.com',
+        //     'password'=>Hash::make('1234asdf')
+        // ]);
     }
 }

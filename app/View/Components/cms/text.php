@@ -12,6 +12,7 @@ class text extends Component
     public $type = 'text';
     public $labelClass = '';
     public $inputClass = '';
+    public $formClass = '';
     public $placeholder;
     public $wireModel;
     public $addAttributes;
@@ -21,7 +22,7 @@ class text extends Component
      *
      * @return void
      */
-    public function __construct($title,$id='',$name='',$type='text',$labelClass='',$inputClass='',$placeholder='Write here..',$wireModel='',$addAttributes='')
+    public function __construct($title,$id='',$name='',$type='text',$labelClass='',$inputClass='',$formClass = '',$placeholder='Write here..',$wireModel='',$addAttributes='')
     {
         $this->title = $title;
         $this->id = $id;
@@ -32,6 +33,7 @@ class text extends Component
         $this->wireModel = $wireModel;
         $this->type = $type;
         $this->addAttributes = $addAttributes;
+        $this->formClass = $formClass;
     }
 
     /**

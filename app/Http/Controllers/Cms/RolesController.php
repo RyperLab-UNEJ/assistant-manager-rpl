@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Cms;
 
-use App\Models\Participant;
 use Illuminate\Http\Request;
-use App\Models\CompetitionLevel;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\App;
+use App\Http\Controllers\Controller;
+use App\Http\Livewire\Cms\Role\CreateRole;
+use App\Http\Livewire\Cms\Role\EditRole;
+use App\Http\Livewire\Cms\Role\ShowRole;
 
-class CompetitionController extends Controller
+class RolesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +18,7 @@ class CompetitionController extends Controller
      */
     public function index()
     {
-        return view('livewire.cms.competition.index-competition');
+        return view('livewire.cms.roles.index-roles');
     }
 
     /**
@@ -27,6 +28,7 @@ class CompetitionController extends Controller
      */
     public function create()
     {
+        return App::call(CreateRole::class);
     }
 
     /**
@@ -37,8 +39,7 @@ class CompetitionController extends Controller
      */
     public function store(Request $request)
     {
-        // Session::flash('success', 'Kompetisi berhasil dibuat!');
-        // return redirect()->route('cms.competition.index')->with('success', 'Kompetisi berhasil dibuat!');
+        //
     }
 
     /**
@@ -49,7 +50,7 @@ class CompetitionController extends Controller
      */
     public function show($id)
     {
-        //
+        return App::call(ShowRole::class,['role'=>$id]);
     }
 
     /**
@@ -60,7 +61,7 @@ class CompetitionController extends Controller
      */
     public function edit($id)
     {
-        //
+        return App::call(EditRole::class,['role'=>$id]);
     }
 
     /**

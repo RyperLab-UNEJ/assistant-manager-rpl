@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('competition_levels', function (Blueprint $table) {
-            $table->id();
-            $table->string('level_name');
-            $table->timestamps();
+        Schema::table('admins', function (Blueprint $table) {
+            $table->text('address')->after('name');
         });
     }
 
@@ -27,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('competition_levels');
+        Schema::table('admins', function (Blueprint $table) {
+            $table->dropColumn('address');
+        });
     }
 };

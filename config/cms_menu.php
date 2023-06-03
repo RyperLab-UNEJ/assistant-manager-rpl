@@ -5,33 +5,32 @@ return [
 // icon can use themify icon or fontawesome
         [
             'title'=>'Dashboard',
-            'url'=>'/cms/index',
+            'url'=>'/cms/dashboard',
             'icon'=>'icon-grid menu-icon',
             'permission'=>'',
             'childern'=>[]
         ],
         [
-            'title'=>'Daftar Kompetisi',
-            'url'=>'/cms/competition',
-            'icon'=>'fa-solid fa-list',
-            'permission'=>'',
-            'childern'=>[]
-        ],
-        [
-            'title'=>'Tim',
+            'title'=>'Admins',
             'url'=>'',
             'icon'=>'fa-solid fa-people-group',
-            'permission'=>'',
+            'permission'=>'cms.admins.view|',
             'childern'=>[
                 [
-                    'title'=>'Daftar Submission',
-                    'url'=>'',
-                    'icon'=>'fa-light fa-file-pen',
-                    'permission'=>'',
-                    'childern'=>[]
+                'title'=>'Admin',
+                'url'=>'/cms/admin',
+                'icon'=>'fa-solid fa-people-group',
+                'permission'=>'cms.admins.view',
+                'childern'=>[]
                 ],
+                [
+                'title'=>'Role',
+                'url'=>'/cms/roles',
+                'icon'=>'fa-solid fa-people-group',
+                'permission'=>'cms.roles.view',
+                'childern'=>[]
+                ]
             ]
         ],
-
     ]
 ];

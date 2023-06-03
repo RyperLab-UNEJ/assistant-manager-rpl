@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <!-- Required meta tags -->
@@ -53,14 +53,6 @@
                     <div class="content-wrapper">
                         {{-- MAIN CONTENT SECTION --}}
                         @yield('heading-content')
-                        @if (Session::has('success'))
-                            <div class="alert alert-info alert-dismissible fade show" role="alert">
-                                {{ Session::get('success') }}
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        @endif
                         @yield('main-content')
                     </div>
                     <!-- content-wrapper ends -->
