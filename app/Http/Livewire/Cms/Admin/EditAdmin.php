@@ -14,7 +14,7 @@ class EditAdmin extends FormAdmin
     public function mount(): void
     {
 
-        $this->operation = 'edit';
+        $this->operation = 'update';
         parent::mount();
     }
 

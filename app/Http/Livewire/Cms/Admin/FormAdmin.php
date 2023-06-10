@@ -1,11 +1,13 @@
 <?php
 namespace App\Http\Livewire\Cms\Admin;
 
-use App\Http\Livewire\Cms\Contract\PageAction;
 use App\Models\Admin;
 use Livewire\Component;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Livewire\Cms\Contract\PageAction;
+use Illuminate\Auth\Access\AuthorizationException;
 
 class FormAdmin extends Component
 {
@@ -29,7 +31,22 @@ class FormAdmin extends Component
        'role'=>'required'
     ];
 
+    /**
+     * Confirm Admin authorization to access the datatable resources.
+     *
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     * @throws \ErrorException
+     */
+    protected function confirmAuthorization(): void
+    {
+        $permission = 'cms.' . $this->admin->getTable() . '.' . $this->operation;
+        if (!Auth::guard('cms')->user()->can($permission)) {
+            throw new AuthorizationException();
+        }
+    }
+
     public function mount(){
+        $this->confirmAuthorization();
         $this->roles = Role::pluck('name','name');
 
         // dd($this->operation );
@@ -46,6 +63,11 @@ class FormAdmin extends Component
 
     public function save()
     {
+        if (($this->operation !== 'create') && ($this->operation !== 'update')) {
+            return redirect()->to(route('cms.admin.index'));
+        }
+
+        $this->confirmAuthorization();
 
        $this->validate();
        if ($this->operation === 'create') {

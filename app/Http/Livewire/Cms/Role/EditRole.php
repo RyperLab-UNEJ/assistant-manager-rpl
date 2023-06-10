@@ -13,7 +13,7 @@ class EditRole extends FormRole
      */
     public function mount(): void
     {
-        $this->operation = 'edit';
+        $this->operation = 'update';
         parent::mount();
     }
 

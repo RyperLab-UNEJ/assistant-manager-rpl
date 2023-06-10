@@ -2,10 +2,12 @@
 namespace App\Http\Livewire\Cms\Role;
 
 
-use App\Http\Livewire\Cms\Contract\PageAction;
-use App\Models\Permission;
 use Livewire\Component;
+use App\Models\Permission;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Livewire\Cms\Contract\PageAction;
+use Illuminate\Auth\Access\AuthorizationException;
 
 class FormRole extends Component
 {
@@ -26,6 +28,8 @@ class FormRole extends Component
     ];
 
     public function mount(){
+        $this->confirmAuthorization();
+
         foreach (config('auth.guards') as $key => $value) {
             $this->guards[$key] = $key;
         }
@@ -47,6 +51,20 @@ class FormRole extends Component
 
     }
 
+    /**
+     * Confirm Admin authorization to access the datatable resources.
+     *
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     * @throws \ErrorException
+     */
+    protected function confirmAuthorization(): void
+    {
+        $permission = 'cms.' . $this->role->getTable() . '.' . $this->operation;
+        if (!Auth::guard('cms')->user()->can($permission)) {
+            throw new AuthorizationException();
+        }
+    }
+
     public function backToIndex()
     {
         return redirect(route('cms.roles.index'));
@@ -54,7 +72,10 @@ class FormRole extends Component
 
     public function save()
     {
-
+        if (($this->operation !== 'create') && ($this->operation !== 'update')) {
+            return redirect()->to(route('cms.roles.index'));
+        }
+        $this->confirmAuthorization();
        $this->validate();
 
        $this->role->save();

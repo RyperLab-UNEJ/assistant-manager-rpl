@@ -38,4 +38,8 @@ trait PageAction {
             route($this->getBaseRouteName().$action, [$this->getRouteKeyName() => $key])
         );
     }
+
+    public function getBasePermission(Object $model){
+        return 'cms.' . ($model)->getTable().'.';
+    }
 }

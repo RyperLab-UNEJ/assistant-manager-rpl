@@ -14,20 +14,20 @@ return [
             'title'=>'Admins',
             'url'=>'',
             'icon'=>'fa-solid fa-people-group',
-            'permission'=>'cms.admins.view|',
+            'permission'=>'cms.admins.viewAny|cms.roles.viewAny',
             'childern'=>[
                 [
                 'title'=>'Admin',
                 'url'=>'/cms/admin',
                 'icon'=>'fa-solid fa-people-group',
-                'permission'=>'cms.admins.view',
+                'permission'=>'cms.admins.viewAny',
                 'childern'=>[]
                 ],
                 [
                 'title'=>'Role',
                 'url'=>'/cms/roles',
                 'icon'=>'fa-solid fa-people-group',
-                'permission'=>'cms.roles.view',
+                'permission'=>'cms.roles.viewAny',
                 'childern'=>[]
                 ]
             ]

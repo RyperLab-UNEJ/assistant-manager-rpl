@@ -11,7 +11,7 @@ class ShowRole extends FormRole
      */
     public function mount(): void
     {
-        $this->operation = 'show';
+        $this->operation = 'view';
         parent::mount();
     }
 

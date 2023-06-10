@@ -13,7 +13,7 @@ class ShowAdmin extends FormAdmin
     public function mount(): void
     {
 
-        $this->operation = 'show';
+        $this->operation = 'view';
         parent::mount();
     }
 
