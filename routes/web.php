@@ -35,4 +35,10 @@ Route::prefix('cms')->name('cms.')->middleware('auth:cms')->group(function () {
     Route::resource('/roles',RolesController::class);
 });
 
+Route::prefix('user')->name('user.')->middleware('auth:web')->group(function () {
+    Route::get('/home',function(){
+        return 'halam home';
+    })->name('home');
+});
+
 require __DIR__.'/auth.php';
