@@ -1,6 +1,6 @@
 @section('after-script')
 <script>
-    setCurrent('cms/admin')
+    setCurrent('cms/admin');
 </script>
 @endsection
 <div class="card">
@@ -13,6 +13,7 @@
                 <x-cms.text title="Alamat" wireModel='admin.address' placeholder="Alamat" addAttributes="required"/>
                 <x-cms.text type="email" title="Email" wireModel='email' placeholder="Email" addAttributes="required"/>
                 <x-cms.select title="Role" wireModel='role' :options="$roles" addAttributes="required"/>
+                <x-cms.select-two title="Role" id="select2" wireModel='role' :options="$roles" addAttributes="required"/>
                 <div class="flex gap-5">
                     <x-cms.text type="{{ $isVisible?'text':'password' }}" formClass="flex-grow" inputClass="w-full" title="Password" wireModel='password' placeholder="Password" addAttributes="required"/>
                     <x-cms.text type="{{ $isVisible?'text':'password' }}" formClass="flex-grow" inputClass="w-full" title="Confirm Password" wireModel='confirmPassword' placeholder="Comfirm Password" addAttributes="required"/>

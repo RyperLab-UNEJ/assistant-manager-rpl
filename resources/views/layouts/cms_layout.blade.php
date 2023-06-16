@@ -16,7 +16,7 @@
     <!-- Plugin css for this page -->
     <link rel="stylesheet" href="{{ asset('cms/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}">
     <link rel="stylesheet" href="{{ asset('cms/vendors/ti-icons/css/themify-icons.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('js/select.dataTables.min.css') }}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('js/select.dataTables.min.css') }}"> --}}
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="{{ asset('cms/css/vertical-layout-light/style.css') }}">
@@ -86,7 +86,13 @@
     <script src="{{ asset('cms/js/Chart.roundedBarCharts.js') }}"></script>
     <!-- End custom js for this page-->
     @livewireScripts
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    {{-- Tiny MCE --}}
+    <script src="https://cdn.tiny.cloud/1/04ziebv0314chbsscja67sj6ccikvj7c581zbrw9p3wun0rf/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     @yield('after-script')
+    @yield('component-script')
 </body>
 
 </html>
