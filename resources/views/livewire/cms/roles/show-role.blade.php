@@ -10,8 +10,8 @@
             @include('components.cms.alert')
             <form class="forms-sample" wire:submit.prevent="save">
 
-                <x-cms.text title="Name" wireModel='role.name' placeholder="Name" addAttributes="disabled"/>
-                <x-cms.select title="Guard" wireModel='role.guard_name' :options="$guards" addAttributes="disabled"/>
+                <x-text title="Name" wireModel='role.name' placeholder="Name" addAttributes="disabled"/>
+                <x-select title="Guard" wireModel='role.guard_name' :options="$guards" addAttributes="disabled"/>
 
                 <div class="table-responsive pt-3 mb-10">
                     <table class="table table-bordered">
@@ -47,7 +47,7 @@
                                     <div class="d-flex justify-content-center">
                                         <input wire:model='permissions' value="{{ $value[6] }}" type="checkbox" disabled>
                                     </div>
-                                    {{-- <x-cms.checkbox title="" value="{{ $value[6] }}" wireModel='permissions'/> --}}
+                                    {{-- <x-checkbox title="" value="{{ $value[6] }}" wireModel='permissions'/> --}}
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center">
