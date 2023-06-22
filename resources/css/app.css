@@ -7,6 +7,10 @@
     width: 90%!important;
 }
 
+.nav-item.active .nav-link .icon-grid {
+    color: #ffffff!important;
+}
+
 .form-control-issue {
     /* display: flex; */
     flex-direction: row!important;
