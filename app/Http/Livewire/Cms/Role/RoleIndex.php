@@ -17,7 +17,16 @@ class RoleIndex extends LivewireDatatable
 {
     use PageAction;
     public $model = Role::class;
+    public $operation = 'viewAny';
+    public $hideable = 'select';
 
+
+
+    public function __construct()
+    {
+        $this->confirmAuthorization();
+
+    }
     public function columns()
     {
         return [
