@@ -16,11 +16,13 @@
         <div class="alert-text">{{ session('errorMessage') }}</div>
         @else
 
-        <div class="alert-text">Oops, there are some errors</div>
+        @foreach ($errors->all() as $item)
+            <div class="alert-text">{{ $item}}</div>
+        @endforeach
         @endif
         <div class="alert-close">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true"><i class="ki ki-close"></i></span>
+                <span aria-hidden="true">&times;</span>
             </button>
         </div>
     </div>

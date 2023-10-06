@@ -12,8 +12,7 @@
                 <x-text title="Nama Pengguna" wireModel='admin.name' placeholder="Nama Pengguna" addAttributes="required"/>
                 <x-text title="Alamat" wireModel='admin.address' placeholder="Alamat" addAttributes="required"/>
                 <x-text type="email" title="Email" wireModel='email' placeholder="Email" addAttributes="required"/>
-                <x-select title="Role" wireModel='role' :options="$roles" addAttributes="required"/>
-                <x-select-two title="Role" id="select2" wireModel='role' :options="$roles" addAttributes="required"/>
+                <x-select2 title="Role" id="select2" wireModel='role' :options="$roles" addAttributes="required"/>
                 <div class="flex gap-5">
                     <x-text type="{{ $isVisible?'text':'password' }}" formClass="flex-grow" inputClass="w-full" title="Password" wireModel='password' placeholder="Password" addAttributes="required"/>
                     <x-text type="{{ $isVisible?'text':'password' }}" formClass="flex-grow" inputClass="w-full" title="Confirm Password" wireModel='confirmPassword' placeholder="Comfirm Password" addAttributes="required"/>

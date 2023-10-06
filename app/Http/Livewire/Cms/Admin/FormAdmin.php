@@ -58,7 +58,14 @@ class FormAdmin extends Component
 
     public function backToIndex()
     {
-        return redirect(route('cms.admin.index'));
+        return redirect(route('cms.admin.index'))->with('alertType','success')
+        ->with('alertMessage','New competition successfully created.');
+    }
+
+    function getAlertMessage()
+    {
+        return $this->operation == 'create' ? 'New admin created successfully.'
+        : "Admin #".$this->admin->id." updated successfully.";
     }
 
     public function save()
@@ -97,8 +104,9 @@ class FormAdmin extends Component
        }
 
 
-       session()->flash('success', 'New competition successfully created.');
-       return redirect(route('cms.admin.index'));
+       return redirect(route('cms.admin.index'))
+       ->with('alertType','success')
+       ->with('alertMessage',$this->getAlertMessage());
     }
 }
 

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>SI Puskesmas Gedongan</title>
+    <title>Laravel Template</title>
 
     <!-- Tailwind -->
     {{-- <link rel="stylesheet" href="./css/tailwind.css">
@@ -15,6 +15,7 @@
 
     <!-- Font -->
     <script src="https://kit.fontawesome.com/d79b975262.js" crossorigin="anonymous" defer></script>
+    <link rel="shortcut icon" href="{{ asset('cms/images/favicon.png') }}" />
     <!-- Alpine -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
@@ -23,9 +24,9 @@
     <div class="flex h-full items-center" style="height: 100vh;">
         <div class="container flex flex-col items-center justify-center h-full bg px-6" style="background-color: hsl(29, 100%, 68%);background-image: url({{ asset('cms/images/BG.png') }});background-repeat: no-repeat;background-size: cover;background-position: center">
             <!-- <img class="h-full object-fill" src="puskesmas-gedongan-bakal-dipindah-ke-sawunggaling_m_231088.jpg" alt=""> -->
-            <img class="h-1/3 w-fit mb-20" src="{{ asset('cms/images/pngegg.png') }}" alt="">
+            <img class="h-1/3 w-fit mb-20" src="{{ asset('cms/images/Visual data-bro.png') }}" alt="">
             <div class="font-bold text-4xl text-center items-center text-white">
-                SISTEM RETENSI & PEMUSNAHAN PUSKESMAS GEDONGAN MOJOKERTO
+                CMS DASHBOARD TEMPLATE
             </div>
         </div>
         <div class="container  px-24">

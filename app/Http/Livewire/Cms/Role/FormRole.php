@@ -70,6 +70,12 @@ class FormRole extends Component
         return redirect(route('cms.roles.index'));
     }
 
+    function getAlertMessage()
+    {
+        return $this->operation == 'create' ? 'New role created successfully.'
+        : "Role #".$this->role->id." updated successfully.";
+    }
+
     public function save()
     {
         if (($this->operation !== 'create') && ($this->operation !== 'update')) {
@@ -83,7 +89,8 @@ class FormRole extends Component
 
 
        session()->flash('success', 'New competition successfully created.');
-       return redirect(route('cms.roles.index'));
+       return redirect(route('cms.roles.index'))->with('alertType','success')
+       ->with('alertMessage',$this->getAlertMessage());
     }
 }
 

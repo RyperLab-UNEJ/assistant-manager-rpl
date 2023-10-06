@@ -74,7 +74,12 @@
                       </tbody>
                     </table>
                   </div>
-                <button wire:click="performAction('show',{{ $role->id }})" type="button" class="btn btn-warning mr-2" >edit</button>
+
+                  @can('cms.roles.update')
+
+                  <a type="button" class="btn btn-warning mr-2" href="{{ route('cms.roles.edit',['role'=>$role->id]) }}">Edit</a>
+                  @endcan
+
                 <button type="button" class="btn btn-outline-danger" wire:click='backToIndex'>Cancel</button>
             </form>
             </div>

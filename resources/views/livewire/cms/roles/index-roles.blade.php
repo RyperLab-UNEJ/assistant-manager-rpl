@@ -4,6 +4,7 @@
 
 @section('heading-content')
 <h3 class="mb-6 text-3xl">Daftar Jabatan</h3>
+@include('components.cms.alert')
 @endsection
 
 @section('main-content')
